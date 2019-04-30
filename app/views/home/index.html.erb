@@ -1,0 +1,12 @@
+<h1>Welcome to the gossips</h1>
+<h2>See below the list of gossips : </h2>
+<% @my_gossips.each_with_index do |gossip, i| %>
+  <div class="card" style="width: 15em">
+    <img class="card-img-top" src="https://bit.ly/2J44t2M" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">N°<%=i%> by <%= gossip.user.first_name %> </h5>
+      <p class="card-text"><%= gossip.title %></p>
+      <a href="#" class="btn btn-primary"><%= link_to "see more", gossip_path(3)%></a>
+    </div>
+  </div>
+<% end %>
