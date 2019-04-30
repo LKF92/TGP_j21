@@ -6,7 +6,7 @@
     <div class="card-body">
       <h5 class="card-title">N°<%=i%> by <%= gossip.user.first_name %> </h5>
       <p class="card-text"><%= gossip.title %></p>
-      <a href="#" class="btn btn-primary"><%= link_to "see more", gossip_path(3)%></a>
+      <a href="#" class="btn btn-primary"><%= link_to "see more", gossip_path(i)%></a>
     </div>
   </div>
 <% end %>

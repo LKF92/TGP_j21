@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :team, only: [:index]
   resources :contact, only: [:index]
   resources :secret, only: [:index]
-  resources :gossips
+  resources :gossips, except: [:index]
   resources :authors
 end

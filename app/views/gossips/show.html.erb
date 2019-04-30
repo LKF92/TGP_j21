@@ -4,4 +4,4 @@ The author : <em><%= @my_gossip.user.first_name %></em><br>
 Title :<em><%= @my_gossip.title %></em><br>
 Content : <em><%= @my_gossip.content %></em><br>
 Created the : <em><%= @my_gossip.created_at %></em><br>
-<p>Wow... <%= @my_gossip.user.first_name %> is such a lil' bitch ! <%= link_to "Check out", author_index_path(@my_gossip.user.id-1)%> his page to know more about him/her !</p>
+<p>Wow... <%= @my_gossip.user.first_name %> is such a lil' bitch ! <%= link_to "Check out", author_path(@my_gossip.user.id-1)%> his page to know more about him/her !</p>
