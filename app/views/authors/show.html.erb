@@ -1,6 +1,7 @@
-<h1>Author n°<%= @id_page %></h1>
+<h1>Author n°<%= @my_author.first_name %></h1>
 Surname : <%= @my_author.first_name %> <br>
 Family name : <%= @my_author.last_name %> <br>
 Age : <%= @my_author.age %> <br>
 Email : <%= @my_author.email %><br>
+From : <%= link_to "#{@my_city.name}", city_path(@my_city.id) %><br>
 Author's description : <%= @my_author.description %><br>

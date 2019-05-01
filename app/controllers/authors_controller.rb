@@ -6,8 +6,8 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @id_page = params[:id].to_i
-    @my_author = User.all[@id_page]
+    @my_author = User.find(params[:id])
+    @my_city = City.find(@my_author.city_id)
   end
 
   def new

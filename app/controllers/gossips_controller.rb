@@ -1,12 +1,15 @@
 class GossipsController < ApplicationController
 
   def index
- # Méthode qui récupère tous les potins et les envoie à la view index (index.html.erb) pour affichage
+    @gossip = Gossip.all
   end
 
   def show
-    @id_page = params[:id].to_i
-    @my_gossip = Gossip.all[@id_page]
+    @my_gossip = Gossip.find(params[:id].to_i)
+    @my_author = User.find(@my_gossip.user_id)
+    @my_city = City.find(@my_author.city_id)
+    puts params
+
   end
 
   def new

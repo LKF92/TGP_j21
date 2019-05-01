@@ -1,11 +1,8 @@
-<div class="jumbotron" style="background-image: url(https://blog.oxforddictionaries.com/wp-content/uploads/gossip-pop-art-men-1200x330.jpg);">
-  <h1 class="display-4 text-white font-weight-bold text-center">Welcome to the gossip world</h1>
-</div>
-
-
+<h1> <%= @my_city.name %> </h1>
+<p>Here are all the gossips in <%= @my_city.name %> </p>
 <div class="container">
   <div class="row">
-    <% @my_gossips.each do |gossip| %>
+    <% @my_city.gossips.each do |gossip| %>
     <div class="col-sm-4 mb-2">
       <div class="list-group">
         <a href="<%=gossip_path(gossip.id)%>" class="list-group-item list-group-item-action">

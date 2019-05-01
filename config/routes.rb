@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :secret, only: [:index]
   resources :gossips, except: [:index]
   resources :authors
+  resources :cities
 end
