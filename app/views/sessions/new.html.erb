@@ -1,10 +1,16 @@
+<!-- FLASH : error in case the user doesn't fill the form correctly -->
+<% if flash[:danger] %>
+<div class='alert alert-danger' role='alert'>
+  <%= flash[:danger] %>
+  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span class="close-button" aria-hidden='true'>&times</span>
+  </button>
+</div>
+<% end %>
 <div class="ml-4 mt-5">
   <h1> Login to the Gossip Project </h1>
-
   <div class="form-group">
-
     <%= form_tag url_for(action: 'create'), method: "post" do %>
-
 
     <%= label_tag 'Email' %><br>
     <%= text_field_tag 'email'%>

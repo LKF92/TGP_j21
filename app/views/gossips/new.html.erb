@@ -1,19 +1,25 @@
 <h1>Let's create a new gossip !</h1>
+<div class="ml-4 mt-5">
+  <!-- FLASH : error in case the user doesn't fill the form correctly -->
+  <% if flash[:danger] %>
+  <div class='alert alert-danger' role='alert'>
+    <%= flash[:danger] %>
+    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+      <span class="close-button" aria-hidden='true'>&times</span>
+    </button>
+  </div>
+  <% end %>
 
 <%= form_tag url_for(action: 'create'), method: "post" do %>
 
-     <%= label_tag 'Title' %>
+     <%= label_tag 'Title' %><br/>
      <%= text_field_tag 'title'%>
      <br /> <br />
 
-     <%= label_tag 'Content' %>
+     <%= label_tag 'Content' %><br/>
      <%= text_area_tag 'content'%>
-     <br /> <br />
-
-     <%= label_tag 'Author' %>
-     <%= text_field_tag 'author' %>
-     <br /> <br />
+     <br/> <br />
 
      <%= submit_tag "Create Post" %>
-
    <% end %>
+</div>

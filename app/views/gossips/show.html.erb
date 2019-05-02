@@ -11,7 +11,8 @@
 <br>
 <br>
 <p>Wow... <%= @my_author.first_name %> is such a lil' bitch ! <br>
-
+<% if @my_author == current_user %>
 <a href=" <%=edit_gossip_path(@my_gossip.id)%> " class="btn btn-outline-secondary btn-sm">Edit</a>
 <a href=" <%=gossip_path(@my_gossip.id)%> " class="btn btn-danger" data-confirm="Are you sure ?" data-method='DELETE'>Delete</a>
+<% end %>
 </div>

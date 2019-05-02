@@ -21,7 +21,7 @@ JoinTagGossip.reset_pk_sequence
 end
 
 10.times do
-  my_user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::TvShows::SouthPark.quote, email: Faker::Internet.email, age: rand(16..40), city: City.all[rand(0..9)])
+  my_user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::TvShows::SouthPark.quote, email: Faker::Internet.email, age: rand(16..40), city: City.all[rand(0..9)], password: 'foobar')
 end
 
 20.times do
@@ -37,7 +37,7 @@ end
 end
 
 10.times do
-  my_sender = User.all[rand(0..9)] 
+  my_sender = User.all[rand(0..9)]
   my_recipient = User.all[rand(0..9)]
 
   while my_sender == my_recipient #Pcq une personne ne s'envoie pas des messages à elle-meme
