@@ -26,15 +26,19 @@
         </li>
         <li class="nav-item">
           <%= link_to 'Contact', contact_index_path, :class => "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign in', new_author_path, :class => "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Login', new_session_path, :class => "nav-link" %>
+        </li>
 
+        <% if current_user != nil %>
+        <li class="nav-item">
+          <%= link_to 'Logout', session_path(current_user), method: :delete, :class => "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
+        <% end %>
       </ul>
     </div>
   </nav>

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :authors
   resources :cities
+  resources :sessions, only: [:new, :create, :destroy]
 end
