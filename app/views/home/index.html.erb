@@ -6,15 +6,15 @@
 <div class="container">
   <div class="row">
     <% @my_gossips.each do |gossip| %>
-    <div class="col-sm-4 mb-2">
+    <div class="col-sm-4 mb-4">
       <div class="list-group">
         <a href="<%=gossip_path(gossip.id)%>" class="list-group-item list-group-item-action">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">N°<%=gossip.id%> by <%= gossip.user.first_name %></h5>
-
           </div>
           <p class="mb-1"><%= gossip.title %></p>
         </a>
+        <a href="<%= edit_gossip_path(gossip.id) %>" class="btn btn-outline-secondary btn-sm">Edit</a>
       </div>
     </div>
     <% end %>

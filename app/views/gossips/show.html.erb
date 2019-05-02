@@ -1,7 +1,17 @@
-<h1>Here is more details about the gossip n°<%= params[:id] %></h1>
+<div class="m-4">
 
-The author : <em><%= @my_gossip.user.first_name %>  <%= @my_gossip.user.last_name%> </em><br>
-Title :<em><%= @my_gossip.title %></em><br>
-Content : <em><%= @my_gossip.content %></em><br>
-Created in : <em><%= @my_city.name %> <%= @my_gossip.created_at %></em><br>
-<p>Wow... <%= @my_author.first_name %> is such a lil' bitch ! <%= link_to "Check out", author_path(@my_author)%> his page to know more about him/her !</p>
+<h1>Here is more details about the gossip n°<%= params[:id] %></h1>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">The author : <em> <%= link_to "#{@my_gossip.user.first_name} #{@my_gossip.user.last_name}", author_path(@my_author)%>  </em></li>
+  <li class="list-group-item">Title :<em><%= @my_gossip.title %></em></li>
+  <li class="list-group-item">Content : <em><%= @my_gossip.content %></em></li>
+  <li class="list-group-item">Created in : <em><%= link_to "#{@my_city.name}", city_path(@my_city.id) %> <%= @my_gossip.created_at %></em></li>
+
+</ul>
+<br>
+<br>
+<p>Wow... <%= @my_author.first_name %> is such a lil' bitch ! <br>
+
+<a href=" <%=edit_gossip_path(@my_gossip.id)%> " class="btn btn-outline-secondary btn-sm">Edit</a>
+<a href=" <%=gossip_path(@my_gossip.id)%> " class="btn btn-danger" data-confirm="Are you sure ?" data-method='DELETE'>Delete</a>
+</div>
