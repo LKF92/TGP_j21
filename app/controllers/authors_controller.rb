@@ -16,6 +16,7 @@ class AuthorsController < ApplicationController
     @new_user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], city_id: 1, password: params[:password], password_confirmation: params[:password_confirmation])
     if @new_user.save
       log_in(@new_user)
+      redirect_to root_path
 
     else
       flash.now[:danger] = 'Invalid email/password combination'
