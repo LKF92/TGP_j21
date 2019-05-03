@@ -51,7 +51,6 @@ class GossipsController < ApplicationController
   end
 
   private
-
   def authenticate_user
     unless current_user
       flash[:danger] = "You are not logged in ! "
